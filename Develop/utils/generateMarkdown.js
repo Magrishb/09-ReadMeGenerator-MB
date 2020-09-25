@@ -1,10 +1,14 @@
 // function to generate markdown for README
-function generateMarkdown(data) {
+function generateMarkdown(response) {
   return `
   # ${response.title}
 
   ## Description
   ${response.description}
+
+  ## Table of Contents
+  ${response.TableofContents}
+
 
   ## Installation
   ${response.installation}
@@ -24,7 +28,7 @@ function generateMarkdown(data) {
   ## Questions
   -[GitHub](https://github.com/${response.github})
   -[Email](${response.email})
-`;
+`
 }
 
 module.exports = generateMarkdown;

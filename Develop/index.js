@@ -1,10 +1,13 @@
+
 const fs = require("fs");
 const inquirer = require("inquirer");
-const generateMarkdown = require("./utils/generateMarkdown.js");
-
+const util = require('util');
+const generateMarkdown = require("./utils/generateMarkdown");
+// const appendFileAsync = util.promisify(fs.appendFile);
+// const readFileAsync = util.promisify(fs.readFile);
+// const writeFileAsync = util.promisify(fs.writeFile);
 // array of questions for user
-
-const questions = [
+const questionsArray = [
     {
         type: "input",
         name: "title",
@@ -14,6 +17,19 @@ const questions = [
         type: "input",
         name: "description",
         message: "Describe the Project:",
+    },
+    {
+        type: "checkbox",
+        message: "Table of Contents",
+        name: "TableofContents",
+        choices: [
+            "installation",
+            "Usage",
+            "License",
+            "Contributions",
+            "Tests",
+            "Questions",
+          ],
     },
     {
         type: "input",
@@ -50,27 +66,24 @@ const questions = [
         name: "github",
         message: "What is your github pages?",
     },
- ];
-
-  // function to write readme file
-function init() {
-    inquirer
-      .prompt(questionsArray)
-      .then((response) => writeToFile(response))
-      .catch((err) => console.log(err));
-  }
-
-
+];
 // function to write README file
-// function writeToFile(fileName, data) {
-// }
-
+function writeToFile(response) {
+  fs.writeFile("READ.md", generateMarkdown(response), function (err) {
+    if (err) throw err;
+  });
+}
 // function to initialize program
-//function init() {
-
-//}
-
+function init() {
+  inquirer
+    .prompt(questionsArray)
+    .then((response) => writeToFile(response))
+    .catch((err) => console.log(err));
+}
 // function call to initialize program
-//init();
+init();
+// inquirer.prompt(questionsArray).then(function (response) {
+//   console.log(Response);
+// });
 
-
+ 
