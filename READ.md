@@ -12,6 +12,7 @@
 
   ## User Story
 AS A developer, I want a README generator so that I can quickly create a professional README for a new project.
+
   ## License
   ISC
 
@@ -19,7 +20,9 @@ AS A developer, I want a README generator so that I can quickly create a profess
   ALI and SYD
 
   ## Testing
-  undefined
+  !!(Previewed Inputs.png)
+
+  !!(Preview README.md.png)
 
   ## Questions
   -[GitHub](https://github.com/https://github.com/)
