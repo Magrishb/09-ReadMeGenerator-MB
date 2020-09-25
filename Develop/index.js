@@ -50,9 +50,15 @@ const questions = [
         name: "github",
         message: "What is your github pages?",
     },
-    
-    
- ]
+ ];
+
+  // function to write readme file
+function init() {
+    inquirer
+      .prompt(questionsArray)
+      .then((response) => writeToFile(response))
+      .catch((err) => console.log(err));
+  }
 
 
 // function to write README file
