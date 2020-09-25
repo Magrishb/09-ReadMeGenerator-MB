@@ -9,7 +9,6 @@ function generateMarkdown(response) {
   ## Table of Contents
   ${response.TableofContents}
 
-
   ## Installation
   ${response.installation}
 

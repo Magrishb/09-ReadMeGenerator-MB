@@ -23,12 +23,12 @@ const questionsArray = [
         message: "Table of Contents",
         name: "TableofContents",
         choices: [
-            "installation",
-            "Usage",
-            "License",
-            "Contributions",
-            "Tests",
-            "Questions",
+            "-installation",
+            "-Usage",
+            "-License",
+            "-Contributions",
+            "-Tests",
+            "-Questions",
           ],
     },
     {
